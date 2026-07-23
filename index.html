@@ -25,6 +25,7 @@
     --line:#cfd0c6;
     --petrol:#2c5652;
     --petrol-deep:#1c3735;
+    --petrol-tint:#e3ecea;
     --gold:#9c7a3c;
     --paper-on-dark:#eceee8;
 
@@ -34,6 +35,7 @@
 
     --container: 1180px;
     --gutter: clamp(20px, 5vw, 64px);
+    --radius: 18px;
   }
 
   *{box-sizing:border-box;}
@@ -90,7 +92,7 @@
     text-transform:uppercase;
     padding:14px 26px;
     border:1px solid var(--ink);
-    border-radius:2px;
+    border-radius:8px;
     display:inline-flex;
     align-items:center;
     gap:10px;
@@ -109,6 +111,29 @@
   .btn-on-dark:hover{background:var(--paper-on-dark);color:var(--petrol-deep);border-color:var(--paper-on-dark);}
   .btn-arrow{transition:transform .25s ease;}
   .btn:hover .btn-arrow{transform:translateX(3px);}
+
+  /* Bouton pilule avec icône circulaire (inspiré de la référence) */
+  .btn-pill{
+    font-family:var(--sans);
+    font-weight:600;
+    font-size:14.5px;
+    text-transform:none;
+    letter-spacing:0;
+    padding:8px 8px 8px 24px;
+    border-radius:999px;
+    gap:14px;
+  }
+  .btn-pill .btn-circle{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--petrol);color:var(--paper-on-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--mono);font-size:13px;flex-shrink:0;
+    transition:transform .25s ease;
+  }
+  .btn-pill:hover .btn-circle{transform:translateX(2px);}
+  .btn-pill.btn-primary .btn-circle{background:var(--gold);color:var(--ink);}
+  .btn-pill.btn-on-dark{border-color:rgba(238,239,233,0.4);}
+  .btn-pill.btn-on-dark .btn-circle{background:var(--paper-on-dark);color:var(--petrol-deep);}
 
   /* ---------- HEADER ---------- */
   header{
@@ -169,74 +194,93 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative;
-    padding:96px 0 90px;
+    background:var(--petrol-deep);
+    color:var(--paper-on-dark);
     overflow:hidden;
+    padding:64px 0 0;
   }
   .hero-grid{
     display:grid;
-    grid-template-columns:1.5fr 1fr;
-    gap:56px;
+    grid-template-columns:1.1fr 1fr;
+    gap:48px;
     align-items:end;
   }
-  .hero-portrait{
-    width:100%;
-    aspect-ratio:4/5;
-    max-width:220px;
-    margin-bottom:24px;
-    border:1px solid var(--line);
-    border-radius:2px;
-    overflow:hidden;
-    background:linear-gradient(160deg,var(--petrol-deep),var(--petrol));
-  }
-  .hero-portrait img{width:100%;height:100%;object-fit:cover;}
+  .hero-copy{padding-bottom:72px;}
   .hero-kicker{
     font-family:var(--mono);
     font-size:13px;
     letter-spacing:0.1em;
     text-transform:uppercase;
-    color:var(--petrol);
+    color:#9fd3cb;
     margin-bottom:22px;
     display:block;
   }
   .hero h1{
-    font-size:clamp(38px, 5.4vw, 68px);
-    line-height:1.04;
-    max-width:16ch;
+    font-size:clamp(36px, 5vw, 62px);
+    line-height:1.06;
+    max-width:15ch;
+    color:var(--paper-on-dark);
   }
   .hero h1 em{
     font-style:italic;
-    color:var(--petrol);
+    color:#d9bd7c;
   }
   .hero-lede{
     max-width:44ch;
-    color:var(--ink-soft);
+    color:rgba(236,238,232,.75);
     font-size:17px;
     margin-top:26px;
     line-height:1.65;
   }
   .hero-cta{
-    display:flex;gap:16px;flex-wrap:wrap;margin-top:38px;
+    display:flex;gap:28px;flex-wrap:wrap;margin-top:38px;align-items:center;
   }
-  .hero-side{
-    border-left:1px solid var(--line);
-    padding-left:32px;
+  .hero-whatsapp{display:flex;align-items:center;gap:12px;}
+  .hero-whatsapp-icon{
+    width:44px;height:44px;border-radius:50%;flex-shrink:0;
+    background:var(--gold);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;font-size:18px;
+    transition:transform .25s ease;
   }
-  .hero-role{
-    font-family:var(--mono);
-    font-size:13px;
-    color:var(--ink-soft);
-    line-height:2;
+  .hero-whatsapp:hover .hero-whatsapp-icon{transform:scale(1.08);}
+  .hero-whatsapp b{
+    display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;
+    color:rgba(236,238,232,.55);font-family:var(--mono);font-weight:500;margin-bottom:2px;
   }
-  .hero-role b{color:var(--ink);font-weight:500;}
-  .hero-name{
-    font-family:var(--serif);
-    font-size:22px;
-    margin-bottom:6px;
+  .hero-whatsapp-text{font-size:15px;color:var(--paper-on-dark);}
+
+  .hero-visual{position:relative;}
+  .hero-photo-frame{
+    border-radius:var(--radius) var(--radius) 0 0;
+    overflow:hidden;
+    aspect-ratio:4/5;
+    background:linear-gradient(160deg,var(--petrol),var(--petrol-deep));
   }
+  .hero-photo-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease;}
+  .hero-photo-frame:hover img{transform:scale(1.03);}
+  .hero-badge{
+    position:absolute;left:-20px;bottom:36px;
+    background:var(--paper);color:var(--ink);
+    border-radius:var(--radius);
+    padding:16px 20px;
+    display:flex;gap:14px;align-items:center;
+    box-shadow:0 24px 48px -22px rgba(0,0,0,0.4);
+    max-width:250px;
+    animation:floatY 6s ease-in-out infinite;
+  }
+  .hero-badge-icon{
+    width:36px;height:36px;border-radius:50%;flex-shrink:0;
+    background:var(--petrol);color:var(--paper-on-dark);
+    display:flex;align-items:center;justify-content:center;font-size:15px;font-family:var(--mono);
+  }
+  .hero-badge b{display:block;font-size:13.5px;margin-bottom:2px;}
+  .hero-badge span{font-size:11.5px;color:var(--slate);font-family:var(--mono);}
+
   @media (max-width:900px){
     .hero-grid{grid-template-columns:1fr;}
-    .hero-side{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:24px;}
-    .hero-portrait{max-width:140px;}
+    .hero-copy{padding-bottom:40px;}
+    .hero-visual{max-width:320px;margin:0 auto;}
+    .hero-badge{left:12px;}
   }
 
   /* ---------- SECTION GENERICS ---------- */
@@ -285,12 +329,12 @@
   /* ---------- SERVICES ---------- */
   .services{
     display:grid;grid-template-columns:repeat(2,1fr);
-    gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
+    gap:20px;
   }
   .service{
     background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
     padding:44px;
   }
   .service .cell-ref{
@@ -316,21 +360,37 @@
   /* ---------- VALEURS ---------- */
   .values{
     display:grid;grid-template-columns:repeat(4,1fr);
-    gap:0;
-    border-top:1px solid var(--line);
-    border-left:1px solid var(--line);
+    gap:20px;
   }
   .value{
     padding:32px 26px;
-    border-right:1px solid var(--line);
-    border-bottom:1px solid var(--line);
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    background:var(--paper);
+    display:flex;flex-direction:column;
   }
-  .value .eyebrow{margin-bottom:16px;}
+  .value-icon{
+    width:48px;height:48px;border-radius:12px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--petrol-tint);color:var(--petrol);
+    margin-bottom:20px;
+  }
+  .value-icon svg{width:22px;height:22px;}
+  .value.value-accent{background:var(--petrol);border-color:var(--petrol);}
+  .value.value-accent .value-icon{background:rgba(238,239,233,.18);color:var(--paper-on-dark);}
+  .value.value-accent h4, .value.value-accent p{color:var(--paper-on-dark);}
+  .value.value-dark{background:var(--ink);border-color:var(--ink);}
+  .value.value-dark .value-icon{background:rgba(238,239,233,.12);color:var(--gold);}
+  .value.value-dark h4, .value.value-dark p{color:var(--paper-on-dark);}
   .value h4{
     font-family:var(--sans);font-weight:600;font-size:14.5px;
     letter-spacing:0.02em;margin-bottom:10px;
   }
-  .value p{font-size:14px;color:var(--ink-soft);margin:0;}
+  .value p{font-size:14px;color:var(--ink-soft);margin:0;flex-grow:1;}
+  .value-more{
+    font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;
+    display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:inherit;opacity:.85;
+  }
   @media (max-width:900px){
     .values{grid-template-columns:1fr 1fr;}
   }
@@ -339,9 +399,11 @@
   }
 
   /* ---------- PROJETS ---------- */
-  .projects{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .projects{display:flex;flex-direction:column;gap:20px;}
   .project{
     background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
     display:grid;grid-template-columns:1fr 1.4fr;
     gap:40px;
     padding:48px;
@@ -382,11 +444,25 @@
   .about-photo{
     aspect-ratio:4/5;
     background:linear-gradient(160deg,var(--petrol-deep),var(--petrol));
-    border-radius:2px;
+    border-radius:var(--radius);
     display:flex;align-items:center;justify-content:center;
     position:relative;
     overflow:hidden;
+    border:1px solid var(--line);
   }
+  .about-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .about-visual{display:flex;flex-direction:column;gap:16px;}
+  .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .about-stat{
+    border-radius:var(--radius);
+    padding:22px;
+    border:1px solid var(--line);
+    background:var(--paper);
+  }
+  .about-stat b{display:block;font-family:var(--serif);font-size:30px;color:var(--ink);margin-bottom:4px;}
+  .about-stat span{font-size:12px;color:var(--ink-soft);font-family:var(--mono);}
+  .about-stat-accent{background:var(--petrol);border-color:var(--petrol);}
+  .about-stat-accent b, .about-stat-accent span{color:var(--paper-on-dark);}
   .about-photo .mono{
     font-family:var(--serif);font-style:italic;color:var(--paper-on-dark);
   }
@@ -411,7 +487,7 @@
     font-size:15px;
     padding:11px 20px;
     border:1px solid var(--ink);
-    border-radius:2px;
+    border-radius:999px;
   }
   .skills-secondary{
     border-top:1px solid var(--line);
@@ -523,7 +599,7 @@
     font-size:14.5px;
     padding:11px 20px;
     border:1px solid var(--line);
-    border-radius:2px;
+    border-radius:999px;
     color:var(--ink-soft);
     background:var(--paper);
   }
@@ -531,6 +607,7 @@
   /* ---------- VISUEL PROJET ---------- */
   .project-visual{
     border:1px solid var(--line);
+    border-radius:14px;
     background:var(--paper-dim);
     padding:24px;
     margin-top:24px;
@@ -584,7 +661,8 @@
     position:relative;z-index:1;
   }
   .value:hover{
-    background:var(--paper-dim);
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px -24px rgba(24,27,26,0.3);
   }
   .cert-row:hover{
     transform:translateX(6px);
@@ -599,8 +677,8 @@
 
   .about-photo{transition:transform .4s ease;}
   .about-photo:hover{transform:translateY(-4px);}
-  .about-photo img, .hero-portrait img{transition:transform .5s ease;}
-  .about-photo:hover img, .hero-portrait:hover img{transform:scale(1.04);}
+  .about-photo img{transition:transform .5s ease;}
+  .about-photo:hover img{transform:scale(1.04);}
 
   .method-row{transition:background-color .3s ease, padding-left .3s ease;}
   .method-row:hover{background-color:var(--paper-dim);padding-left:12px;}
@@ -622,11 +700,10 @@
     0%,100%{transform:translateY(0);}
     50%{transform:translateY(-8px);}
   }
-  .hero-portrait{animation:floatY 6s ease-in-out infinite;}
 
   @media (prefers-reduced-motion: reduce){
     .btn-pulse{animation:none;}
-    .hero-portrait{animation:none;}
+    .hero-badge{animation:none;}
   }
 </style>
 </head>
@@ -644,10 +721,10 @@
       <li><a href="#apropos">À propos</a></li>
       <li><a href="#methode">Méthode</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#contact" class="btn btn-primary nav-cta-mobile" style="display:none;margin-top:10px;">Demander un devis</a></li>
+      <li><a href="#contact" class="btn btn-pill btn-primary nav-cta-mobile" style="display:none;margin-top:10px;">Demander un devis <span class="btn-circle">&gt;&gt;</span></a></li>
     </ul>
     <div class="nav-right">
-      <a href="#contact" class="btn btn-primary">Demander un devis</a>
+      <a href="#contact" class="btn btn-pill btn-primary">Demander un devis <span class="btn-circle">&gt;&gt;</span></a>
       <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
@@ -658,27 +735,33 @@
 <main id="main-content">
 
 <!-- HERO -->
-<section class="hero" id="accueil" style="padding-top:64px;">
+<section class="hero" id="accueil">
   <div class="wrap hero-grid">
-    <div class="reveal in">
+    <div class="hero-copy reveal in">
       <span class="hero-kicker">Market Analysis / Business Intelligence / Decision Support</span>
       <h1>Des analyses <em>claires</em> pour des décisions plus éclairées.</h1>
       <p class="hero-lede">J'aide les startups et les PME à mieux comprendre leurs marchés, analyser leurs projets et exploiter leurs données afin de prendre des décisions plus éclairées. Une approche à la croisée du Business Analysis, de la Market Research et de la Business Intelligence.</p>
       <div class="hero-cta">
-        <a href="#services" class="btn btn-ghost">Découvrir mes services <span class="btn-arrow">&gt;</span></a>
-        <a href="#contact" class="btn btn-primary btn-pulse">Demander un devis <span class="btn-arrow">&gt;</span></a>
+        <a href="#contact" class="btn btn-pill btn-primary btn-pulse">Demander un devis <span class="btn-circle">&gt;&gt;</span></a>
+        <a href="https://wa.me/237698423662" target="_blank" rel="noopener" class="hero-whatsapp">
+          <span class="hero-whatsapp-icon">@</span>
+          <span>
+            <b>Discuter sur WhatsApp</b>
+            <span class="hero-whatsapp-text">+237 698 42 36 62</span>
+          </span>
+        </a>
       </div>
     </div>
-    <div class="hero-side reveal in">
-      <div class="hero-portrait">
+    <div class="hero-visual reveal in">
+      <div class="hero-photo-frame">
         <img src="herve.png" alt="Hervé Nguefa, Business &amp; Data Analyst">
       </div>
-      <div class="hero-name">Hervé Nguefa</div>
-      <div class="hero-role">
-        <b>Fonction :</b> Business &amp; Data Analyst<br>
-        <b>Basé à :</b> Douala, Cameroun<br>
-        <b>Clientèle :</b> Startups &amp; PME<br>
-        <b>Disponibilité :</b> Missions ponctuelles &amp; long terme
+      <div class="hero-badge">
+        <span class="hero-badge-icon">HN</span>
+        <div>
+          <b>Business &amp; Data Analyst</b>
+          <span>Basé à Douala - Disponible pour mission</span>
+        </div>
       </div>
     </div>
   </div>
@@ -803,24 +886,28 @@
     </div>
     <div class="values reveal">
       <div class="value">
-        <span class="eyebrow">01</span>
+        <span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span>
         <h4>Clarté</h4>
         <p>Transformer des informations complexes en analyses compréhensibles et utiles.</p>
+        <span class="value-more">En savoir plus &gt;&gt;</span>
       </div>
-      <div class="value">
-        <span class="eyebrow">02</span>
+      <div class="value value-accent">
+        <span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V9M12 19V5M20 19v-7"/></svg></span>
         <h4>Rigueur</h4>
         <p>Structurer l'analyse et s'appuyer sur des informations pertinentes pour produire des résultats fiables.</p>
+        <span class="value-more">En savoir plus &gt;&gt;</span>
       </div>
-      <div class="value">
-        <span class="eyebrow">03</span>
+      <div class="value value-dark">
+        <span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-6h6v6"/></svg></span>
         <h4>Orientation business</h4>
         <p>Relier les données et l'analyse aux véritables enjeux de l'entreprise.</p>
+        <span class="value-more">En savoir plus &gt;&gt;</span>
       </div>
       <div class="value">
-        <span class="eyebrow">04</span>
+        <span class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21c4-3 8-6.5 8-11a5 5 0 0 0-8-4 5 5 0 0 0-8 4c0 4.5 4 8 8 11Z"/></svg></span>
         <h4>Approche personnalisée</h4>
         <p>Chaque projet est différent. L'analyse est adaptée à vos objectifs, votre contexte et vos besoins.</p>
+        <span class="value-more">En savoir plus &gt;&gt;</span>
       </div>
     </div>
   </div>
@@ -948,8 +1035,22 @@
 <!-- A PROPOS -->
 <section id="apropos">
   <div class="wrap about reveal">
-    <!-- EMPLACEMENT PHOTO : remplacer le bloc ci-dessous par <img src="photo-herve.jpg" alt="Hervé Nguefa, Business & Data Analyst" style="width:100%;height:100%;object-fit:cover;"> -->
-    <img src="herve.png" alt="Hervé Nguefa, Business & Data Analyst" style="width:100%;height:100%;object-fit:cover;">
+    <!-- EMPLACEMENT PHOTO : remplacer herve.png par ta photo professionnelle si besoin -->
+    <div class="about-visual">
+      <div class="about-photo">
+        <img src="herve.png" alt="Hervé Nguefa, Business &amp; Data Analyst">
+      </div>
+      <div class="about-stats">
+        <div class="about-stat about-stat-accent">
+          <b>2+</b>
+          <span>Missions clients réelles</span>
+        </div>
+        <div class="about-stat">
+          <b>6</b>
+          <span>Certifications validées</span>
+        </div>
+      </div>
+    </div>
     <div class="about-body">
       <span class="eyebrow">À propos</span>
       <h2 style="font-size:clamp(26px,3vw,36px);margin:18px 0 24px;">À propos de moi</h2>
@@ -1121,7 +1222,7 @@
       <div>
         <div class="footer-logo">Hervé Nguefa</div>
         <div class="footer-tag">Business &amp; Data Analyst</div>
-        <div class="footer-tag" style="margin-top:4px;">Business Analysis • Data Analysis • Business Intelligence • Decision Support</div>
+        <div class="footer-tag" style="margin-top:4px;">Business Analysis / Data Analysis / Business Intelligence / Decision Support</div>
       </div>
       <ul class="footer-links">
         <li><a href="#accueil">Accueil</a></li>
