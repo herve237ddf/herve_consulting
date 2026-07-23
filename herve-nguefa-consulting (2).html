@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hervé Nguefa | Business &amp; Data Analyst - Analyse &amp; Aide à la Décision</title>
+<meta name="description" content="Hervé Nguefa accompagne les startups et les PME dans l'analyse de marché, l'analyse de projets, la Business Intelligence et l'aide à la décision.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hervé Nguefa | Business & Data Analyst - Analyse & Aide à la Décision">
+<meta property="og:description" content="Des analyses claires pour des décisions plus éclairées. J'aide les startups et les PME à comprendre leurs marchés, leurs projets et leurs données.">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hervé Nguefa | Business & Data Analyst">
+<meta name="twitter:description" content="Des analyses claires pour des décisions plus éclairées.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#eeefe9;
+    --paper-dim:#e6e7e0;
+    --ink:#181b1a;
+    --ink-soft:#454b49;
+    --slate:#6b716d;
+    --line:#cfd0c6;
+    --petrol:#2c5652;
+    --petrol-deep:#1c3735;
+    --gold:#9c7a3c;
+    --paper-on-dark:#eceee8;
+
+    --serif: "Newsreader", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", "SFMono-Regular", monospace;
+
+    --container: 1180px;
+    --gutter: clamp(20px, 5vw, 64px);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--petrol);color:var(--paper);}
+
+  h1,h2,h3{
+    font-family:var(--serif);
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--petrol);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;
+    background:var(--petrol);
+    display:inline-block;
+  }
+
+  .wrap{
+    max-width:var(--container);
+    margin:0 auto;
+    padding-left:var(--gutter);
+    padding-right:var(--gutter);
+  }
+
+  .btn{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding:14px 26px;
+    border:1px solid var(--ink);
+    border-radius:2px;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:transparent;
+    cursor:pointer;
+    transition:background .25s ease, color .25s ease, border-color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .btn-primary:hover{background:var(--petrol-deep);border-color:var(--petrol-deep);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);}
+  .btn-on-dark{border-color:rgba(238,239,233,0.4);color:var(--paper-on-dark);}
+  .btn-on-dark:hover{background:var(--paper-on-dark);color:var(--petrol-deep);border-color:var(--paper-on-dark);}
+  .btn-arrow{transition:transform .25s ease;}
+  .btn:hover .btn-arrow{transform:translateX(3px);}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:20px;padding-bottom:20px;
+  }
+  .logo{
+    font-family:var(--serif);
+    font-size:19px;
+    font-weight:500;
+  }
+  .logo span{color:var(--petrol);}
+  .nav-links{
+    display:flex;align-items:center;gap:36px;
+    list-style:none;margin:0;padding:0;
+  }
+  .nav-links a{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:3px;
+  }
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
+    background:var(--petrol);transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-right{display:flex;align-items:center;gap:28px;}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .nav-toggle span{display:block;width:24px;height:1.5px;background:var(--ink);margin:5px 0;transition:transform .25s ease, opacity .25s ease;}
+
+  @media (max-width:900px){
+    .nav-links{
+      position:fixed;top:69px;left:0;right:0;bottom:0;
+      background:var(--paper);
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:flex-start;
+      padding:40px var(--gutter);
+      gap:28px;
+      transform:translateX(100%);
+      transition:transform .35s ease;
+      z-index:99;
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{font-size:20px;font-family:var(--serif);}
+    .nav-cta-mobile{display:inline-flex !important;}
+    .nav-right .btn{display:none;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    padding:96px 0 90px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.5fr 1fr;
+    gap:56px;
+    align-items:end;
+  }
+  .hero-portrait{
+    width:100%;
+    aspect-ratio:4/5;
+    max-width:220px;
+    margin-bottom:24px;
+    border:1px solid var(--line);
+    border-radius:2px;
+    overflow:hidden;
+    background:linear-gradient(160deg,var(--petrol-deep),var(--petrol));
+  }
+  .hero-portrait img{width:100%;height:100%;object-fit:cover;}
+  .hero-kicker{
+    font-family:var(--mono);
+    font-size:13px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--petrol);
+    margin-bottom:22px;
+    display:block;
+  }
+  .hero h1{
+    font-size:clamp(38px, 5.4vw, 68px);
+    line-height:1.04;
+    max-width:16ch;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--petrol);
+  }
+  .hero-lede{
+    max-width:44ch;
+    color:var(--ink-soft);
+    font-size:17px;
+    margin-top:26px;
+    line-height:1.65;
+  }
+  .hero-cta{
+    display:flex;gap:16px;flex-wrap:wrap;margin-top:38px;
+  }
+  .hero-side{
+    border-left:1px solid var(--line);
+    padding-left:32px;
+  }
+  .hero-role{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--ink-soft);
+    line-height:2;
+  }
+  .hero-role b{color:var(--ink);font-weight:500;}
+  .hero-name{
+    font-family:var(--serif);
+    font-size:22px;
+    margin-bottom:6px;
+  }
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-side{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-top:24px;}
+    .hero-portrait{max-width:140px;}
+  }
+
+  /* ---------- SECTION GENERICS ---------- */
+  section{padding:104px 0;}
+  .section-line{border-top:1px solid var(--line);}
+  .section-head{
+    display:grid;grid-template-columns:1fr 1.3fr;
+    gap:48px;
+    margin-bottom:64px;
+    align-items:start;
+  }
+  .section-head h2{
+    font-size:clamp(28px,3.4vw,42px);
+    line-height:1.12;
+  }
+  .section-head p{
+    color:var(--ink-soft);
+    font-size:16.5px;
+    max-width:52ch;
+  }
+  @media (max-width:760px){
+    .section-head{grid-template-columns:1fr;gap:20px;}
+  }
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- POSITIONNEMENT ---------- */
+  .triad{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line);
+  }
+  .triad-item{
+    padding:38px 28px 38px 10px;
+    border-right:1px solid var(--line);
+  }
+  .triad-item:last-child{border-right:none;}
+  .triad-num{font-family:var(--mono);font-size:13px;color:var(--slate);}
+  .triad-item h3{font-size:26px;margin-top:14px;margin-bottom:10px;}
+  .triad-item p{color:var(--ink-soft);font-size:15px;margin:0;}
+  @media (max-width:760px){
+    .triad{grid-template-columns:1fr;}
+    .triad-item{border-right:none;border-bottom:1px solid var(--line);padding:28px 0;}
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{
+    display:grid;grid-template-columns:repeat(2,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+  }
+  .service{
+    background:var(--paper);
+    padding:44px;
+  }
+  .service .cell-ref{
+    font-family:var(--mono);font-size:12px;color:var(--slate);
+    margin-bottom:22px;display:block;
+  }
+  .service h3{font-size:23px;margin-bottom:14px;}
+  .service p{color:var(--ink-soft);font-size:15px;margin-bottom:22px;}
+  .service ul{margin:0;padding:0;list-style:none;}
+  .service li{
+    font-size:14px;color:var(--ink-soft);
+    padding:9px 0;
+    border-top:1px solid var(--line);
+    display:flex;gap:10px;
+  }
+  .service li:first-child{border-top:none;}
+  .service li::before{content:"-";color:var(--petrol);}
+  @media (max-width:760px){
+    .services{grid-template-columns:1fr;}
+    .service{padding:32px;}
+  }
+
+  /* ---------- VALEURS ---------- */
+  .values{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:0;
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+  }
+  .value{
+    padding:32px 26px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .value .eyebrow{margin-bottom:16px;}
+  .value h4{
+    font-family:var(--sans);font-weight:600;font-size:14.5px;
+    letter-spacing:0.02em;margin-bottom:10px;
+  }
+  .value p{font-size:14px;color:var(--ink-soft);margin:0;}
+  @media (max-width:900px){
+    .values{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .values{grid-template-columns:1fr;}
+  }
+
+  /* ---------- PROJETS ---------- */
+  .projects{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .project{
+    background:var(--paper);
+    display:grid;grid-template-columns:1fr 1.4fr;
+    gap:40px;
+    padding:48px;
+  }
+  .project-tag{font-family:var(--mono);font-size:12px;color:var(--petrol);margin-bottom:14px;display:block;}
+  .project h3{font-size:25px;margin-bottom:12px;}
+  .project p{color:var(--ink-soft);font-size:15px;max-width:48ch;}
+  .project-meta{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .pm-block b{
+    display:block;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;
+    letter-spacing:.08em;color:var(--slate);margin-bottom:8px;
+  }
+  .pm-block span{font-size:14px;color:var(--ink);}
+  @media (max-width:800px){
+    .project{grid-template-columns:1fr;padding:32px;}
+  }
+
+  /* ---------- METHODE ---------- */
+  .method{border-top:1px solid var(--line);}
+  .method-row{
+    display:grid;grid-template-columns:90px 1fr 2fr;
+    gap:32px;
+    padding:30px 0;
+    border-bottom:1px solid var(--line);
+    align-items:start;
+  }
+  .method-num{font-family:var(--mono);font-size:14px;color:var(--slate);padding-top:4px;}
+  .method-row h4{font-family:var(--serif);font-weight:500;font-size:21px;}
+  .method-row p{color:var(--ink-soft);font-size:15px;margin:0;max-width:52ch;}
+  @media (max-width:700px){
+    .method-row{grid-template-columns:1fr;gap:8px;}
+  }
+
+  /* ---------- A PROPOS ---------- */
+  .about{
+    display:grid;grid-template-columns:1fr 1.5fr;gap:60px;align-items:start;
+  }
+  .about-photo{
+    aspect-ratio:4/5;
+    background:linear-gradient(160deg,var(--petrol-deep),var(--petrol));
+    border-radius:2px;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .about-photo .mono{
+    font-family:var(--serif);font-style:italic;color:var(--paper-on-dark);
+  }
+  .about-body p{color:var(--ink-soft);font-size:16.5px;margin-bottom:20px;max-width:60ch;}
+  .about-creds{display:flex;flex-direction:column;gap:14px;margin-top:30px;}
+  .cred{
+    display:flex;gap:14px;align-items:baseline;
+    padding-top:14px;border-top:1px solid var(--line);
+    font-size:14.5px;
+  }
+  .cred b{font-family:var(--mono);color:var(--slate);font-size:12px;min-width:70px;}
+  @media (max-width:800px){
+    .about{grid-template-columns:1fr;}
+    .about-photo{max-width:260px;}
+  }
+
+  /* ---------- COMPETENCES ---------- */
+  .skills-primary{
+    display:flex;flex-wrap:wrap;gap:14px;margin-bottom:44px;
+  }
+  .skill-chip{
+    font-size:15px;
+    padding:11px 20px;
+    border:1px solid var(--ink);
+    border-radius:2px;
+  }
+  .skills-secondary{
+    border-top:1px solid var(--line);
+    padding-top:26px;
+    display:flex;flex-wrap:wrap;gap:10px 28px;
+  }
+  .skills-secondary span{
+    font-family:var(--mono);font-size:13px;color:var(--slate);
+  }
+
+  /* ---------- CERTIFS ---------- */
+  .certs{display:flex;flex-direction:column;}
+  .cert-row{
+    display:grid;grid-template-columns:2fr 1fr 90px;
+    gap:20px;padding:22px 0;border-bottom:1px solid var(--line);align-items:center;
+  }
+  .cert-row:first-child{border-top:1px solid var(--line);}
+  .cert-name{font-size:16px;}
+  .cert-org{font-size:13.5px;color:var(--slate);font-family:var(--mono);}
+  .cert-year{font-family:var(--mono);font-size:13.5px;color:var(--ink-soft);text-align:right;}
+  @media (max-width:640px){
+    .cert-row{grid-template-columns:1fr;gap:6px;padding:20px 0;}
+    .cert-year{text-align:left;}
+  }
+
+  /* ---------- CTA BAND ---------- */
+  .cta-band{
+    background:var(--petrol-deep);
+    color:var(--paper-on-dark);
+    padding:100px 0;
+  }
+  .cta-band h2{color:var(--paper-on-dark);font-size:clamp(28px,4vw,44px);max-width:18ch;}
+  .cta-band p{color:rgba(236,238,232,.75);font-size:16.5px;max-width:56ch;margin-top:20px;}
+  .cta-actions{display:flex;gap:16px;margin-top:38px;flex-wrap:wrap;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;}
+  .contact-direct{display:flex;flex-direction:column;gap:22px;margin-top:36px;}
+  .contact-direct a{
+    font-family:var(--mono);font-size:14.5px;
+    display:flex;align-items:center;gap:10px;
+    padding-bottom:10px;border-bottom:1px solid var(--line);
+  }
+  .form-row{margin-bottom:20px;display:flex;flex-direction:column;gap:8px;}
+  .form-row label{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);}
+  .form-row input, .form-row select, .form-row textarea{
+    font-family:var(--sans);font-size:15px;
+    border:none;border-bottom:1px solid var(--line);
+    background:transparent;padding:10px 2px;color:var(--ink);
+    outline:none;transition:border-color .2s ease;
+  }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus{border-color:var(--petrol);}
+  .form-two{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  @media (max-width:800px){
+    .contact-grid{grid-template-columns:1fr;}
+    .form-two{grid-template-columns:1fr;}
+  }
+  .form-note{font-size:13px;color:var(--slate);margin-top:18px;}
+  .form-success{
+    display:none;margin-top:18px;padding:16px 18px;
+    border:1px solid var(--petrol);color:var(--petrol-deep);
+    font-size:14.5px;background:rgba(44,86,82,0.06);
+  }
+  .form-success.show{display:block;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink);color:var(--paper-on-dark);
+    padding:64px 0 30px;
+  }
+  .footer-top{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px;
+    padding-bottom:44px;border-bottom:1px solid rgba(238,239,233,.15);
+  }
+  .footer-logo{font-family:var(--serif);font-size:22px;}
+  .footer-tag{font-family:var(--mono);font-size:12.5px;color:rgba(236,238,232,.6);margin-top:10px;}
+  .footer-links{display:flex;gap:30px;list-style:none;padding:0;margin:0;flex-wrap:wrap;}
+  .footer-links a{font-size:14px;color:rgba(236,238,232,.8);}
+  .footer-links a:hover{color:var(--paper-on-dark);}
+  .footer-bottom{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    padding-top:26px;font-size:12.5px;color:rgba(236,238,232,.5);font-family:var(--mono);
+  }
+  .footer-bottom a{color:rgba(236,238,232,.5);}
+  .footer-bottom a:hover{color:var(--paper-on-dark);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .reveal{transition:none;opacity:1;transform:none;}
+  }
+
+  /* ---------- ACCESSIBILITÉ ---------- */
+  .skip-link{
+    position:absolute;left:12px;top:-60px;
+    background:var(--ink);color:var(--paper);
+    padding:12px 18px;font-family:var(--mono);font-size:13px;
+    z-index:1000;transition:top .2s ease;border-radius:2px;
+  }
+  .skip-link:focus{top:12px;}
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
+    outline:2px solid var(--petrol);outline-offset:3px;
+  }
+
+  /* ---------- LIVRABLES ---------- */
+  .deliverables{
+    display:flex;flex-wrap:wrap;gap:12px;
+  }
+  .deliverable-chip{
+    font-size:14.5px;
+    padding:11px 20px;
+    border:1px solid var(--line);
+    border-radius:2px;
+    color:var(--ink-soft);
+    background:var(--paper);
+  }
+
+  /* ---------- VISUEL PROJET ---------- */
+  .project-visual{
+    border:1px solid var(--line);
+    background:var(--paper-dim);
+    padding:24px;
+    margin-top:24px;
+  }
+  .project-visual svg{width:100%;height:auto;display:block;}
+  .project-visual figcaption{
+    font-family:var(--mono);font-size:11.5px;color:var(--slate);
+    margin-top:14px;letter-spacing:.02em;
+  }
+
+  /* ---------- PHOTO PLACEHOLDER ---------- */
+  .about-photo{border:1px solid var(--line);}
+  .about-photo-inner{
+    position:absolute;inset:0;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:10px;text-align:center;padding:24px;
+  }
+  .about-photo-inner span{
+    font-family:var(--mono);font-size:12px;color:rgba(238,239,233,.75);
+    letter-spacing:.04em;line-height:1.6;
+  }
+
+  /* ---------- FORM ERROR ---------- */
+  .form-error{
+    display:none;margin-top:18px;padding:16px 18px;
+    border:1px solid #a34a3f;color:#a34a3f;
+    font-size:14.5px;background:rgba(163,74,63,0.06);
+  }
+  .form-error.show{display:block;}
+  .form-loading{opacity:.6;pointer-events:none;}
+
+  /* ---------- ANIMATIONS DE SURVOL ET DE CONVERSION ---------- */
+  .btn{transition:background .25s ease, color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn:active{transform:translateY(0);}
+
+  @keyframes pulseRing{
+    0%{box-shadow:0 0 0 0 rgba(44,86,82,0.35);}
+    70%{box-shadow:0 0 0 10px rgba(44,86,82,0);}
+    100%{box-shadow:0 0 0 0 rgba(44,86,82,0);}
+  }
+  .btn-pulse{animation:pulseRing 2.6s ease-out infinite;}
+  .btn-pulse:hover{animation:none;}
+
+  .service, .project, .value, .cert-row, .deliverable-chip, .skill-chip{
+    transition:transform .3s ease, box-shadow .3s ease, background-color .3s ease, border-color .3s ease;
+  }
+  .service:hover, .project:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px -24px rgba(24,27,26,0.35);
+    position:relative;z-index:1;
+  }
+  .value:hover{
+    background:var(--paper-dim);
+  }
+  .cert-row:hover{
+    transform:translateX(6px);
+    border-color:var(--petrol);
+  }
+  .deliverable-chip:hover, .skill-chip:hover{
+    transform:translateY(-3px);
+    border-color:var(--petrol);
+    color:var(--ink);
+    box-shadow:0 10px 24px -16px rgba(24,27,26,0.35);
+  }
+
+  .about-photo{transition:transform .4s ease;}
+  .about-photo:hover{transform:translateY(-4px);}
+  .about-photo img, .hero-portrait img{transition:transform .5s ease;}
+  .about-photo:hover img, .hero-portrait:hover img{transform:scale(1.04);}
+
+  .method-row{transition:background-color .3s ease, padding-left .3s ease;}
+  .method-row:hover{background-color:var(--paper-dim);padding-left:12px;}
+
+  .triad-item{transition:background-color .3s ease;}
+  .triad-item:hover{background-color:var(--paper-dim);}
+
+  /* Décalage progressif du reveal pour les grilles */
+  .services.reveal.in .service:nth-child(1){transition-delay:0s;}
+  .services.reveal.in .service:nth-child(2){transition-delay:.08s;}
+  .services.reveal.in .service:nth-child(3){transition-delay:.16s;}
+  .services.reveal.in .service:nth-child(4){transition-delay:.24s;}
+  .values.reveal.in .value:nth-child(1){transition-delay:0s;}
+  .values.reveal.in .value:nth-child(2){transition-delay:.08s;}
+  .values.reveal.in .value:nth-child(3){transition-delay:.16s;}
+  .values.reveal.in .value:nth-child(4){transition-delay:.24s;}
+
+  @keyframes floatY{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+  }
+  .hero-portrait{animation:floatY 6s ease-in-out infinite;}
+
+  @media (prefers-reduced-motion: reduce){
+    .btn-pulse{animation:none;}
+    .hero-portrait{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+<header>
+  <nav class="wrap nav" aria-label="Navigation principale">
+    <a href="#accueil" class="logo">Hervé <span>Nguefa</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#methode">Méthode</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="btn btn-primary nav-cta-mobile" style="display:none;margin-top:10px;">Demander un devis</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-primary">Demander un devis</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" id="accueil" style="padding-top:64px;">
+  <div class="wrap hero-grid">
+    <div class="reveal in">
+      <span class="hero-kicker">Market Analysis / Business Intelligence / Decision Support</span>
+      <h1>Des analyses <em>claires</em> pour des décisions plus éclairées.</h1>
+      <p class="hero-lede">J'aide les startups et les PME à mieux comprendre leurs marchés, analyser leurs projets et exploiter leurs données afin de prendre des décisions plus éclairées. Une approche à la croisée du Business Analysis, de la Market Research et de la Business Intelligence.</p>
+      <div class="hero-cta">
+        <a href="#services" class="btn btn-ghost">Découvrir mes services <span class="btn-arrow">&gt;</span></a>
+        <a href="#contact" class="btn btn-primary btn-pulse">Demander un devis <span class="btn-arrow">&gt;</span></a>
+      </div>
+    </div>
+    <div class="hero-side reveal in">
+      <div class="hero-portrait">
+        <img src="herve.png" alt="Hervé Nguefa, Business &amp; Data Analyst">
+      </div>
+      <div class="hero-name">Hervé Nguefa</div>
+      <div class="hero-role">
+        <b>Fonction :</b> Business &amp; Data Analyst<br>
+        <b>Basé à :</b> Douala, Cameroun<br>
+        <b>Clientèle :</b> Startups &amp; PME<br>
+        <b>Disponibilité :</b> Missions ponctuelles &amp; long terme
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSITIONNEMENT -->
+<section id="positionnement">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Comprendre.<br>Analyser.<br>Décider.</h2>
+      <p>Les entreprises disposent souvent de nombreuses informations, mais la difficulté consiste à savoir quoi en faire. J'aide mes clients à structurer et analyser les informations pertinentes (données, marché, projets et besoins métiers) afin de faire ressortir les éléments essentiels et de soutenir des décisions plus éclairées.</p>
+    </div>
+    <div class="triad reveal">
+      <div class="triad-item">
+        <span class="triad-num">A.</span>
+        <h3>Comprendre</h3>
+        <p>Cerner l'activité, le marché et la problématique avant toute analyse.</p>
+      </div>
+      <div class="triad-item">
+        <span class="triad-num">B.</span>
+        <h3>Analyser</h3>
+        <p>Structurer les données et informations pertinentes pour en tirer du sens.</p>
+      </div>
+      <div class="triad-item">
+        <span class="triad-num">C.</span>
+        <h3>Décider</h3>
+        <p>Transformer l'analyse en recommandations concrètes et exploitables.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE VOUS RECEVEZ -->
+<section id="livrables">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Des analyses conçues pour vous aider à décider</h2>
+      <p>Selon votre besoin, vous pouvez recevoir une analyse de marché structurée, une étude de faisabilité, un rapport de synthèse, un tableau de bord, une analyse d'indicateurs clés ou des recommandations fondées sur les informations disponibles.</p>
+    </div>
+    <div class="deliverables reveal">
+      <span class="deliverable-chip">Analyse de marché</span>
+      <span class="deliverable-chip">Étude de faisabilité</span>
+      <span class="deliverable-chip">Rapport d'analyse</span>
+      <span class="deliverable-chip">Tableau de bord</span>
+      <span class="deliverable-chip">Analyse des KPI</span>
+      <span class="deliverable-chip">Synthèse des résultats</span>
+      <span class="deliverable-chip">Identification des risques et opportunités</span>
+      <span class="deliverable-chip">Recommandations structurées</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section-line">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Comment je peux vous aider</h2>
+      <p>Chaque décision importante mérite d'être appuyée par une compréhension claire de la situation. J'accompagne les startups, les PME et les organisations dans l'analyse de leurs projets, de leur marché et de leurs données.</p>
+    </div>
+    <div class="services reveal">
+      <div class="service">
+        <span class="cell-ref">SERV / A1</span>
+        <h3>Analyse de marché &amp; étude de faisabilité</h3>
+        <p>Évaluer un marché, comprendre son environnement et analyser la viabilité d'un projet pour identifier les opportunités, les risques et les facteurs clés à prendre en compte avant de décider.</p>
+        <ul>
+          <li>Étude de marché</li>
+          <li>Analyse de la concurrence</li>
+          <li>Analyse de la demande</li>
+          <li>Étude de faisabilité</li>
+          <li>Analyse des opportunités et des risques</li>
+        </ul>
+      </div>
+      <div class="service">
+        <span class="cell-ref">SERV / A2</span>
+        <h3>Business Analysis</h3>
+        <p>Analyser les besoins, les problématiques et les processus métiers afin de mieux comprendre les enjeux d'une organisation et d'identifier des pistes d'amélioration pertinentes.</p>
+        <ul>
+          <li>Analyse des besoins</li>
+          <li>Analyse des problématiques métiers</li>
+          <li>Étude des processus</li>
+          <li>Identification des axes d'amélioration</li>
+          <li>Recommandations structurées</li>
+        </ul>
+      </div>
+      <div class="service">
+        <span class="cell-ref">SERV / A3</span>
+        <h3>Data Analysis &amp; Business Intelligence</h3>
+        <p>Transformer les données disponibles en informations claires et utiles pour mieux suivre la performance, identifier les tendances et comprendre les évolutions.</p>
+        <ul>
+          <li>Analyse et préparation des données</li>
+          <li>Analyse exploratoire</li>
+          <li>Identification des tendances</li>
+          <li>Suivi des indicateurs clés</li>
+          <li>Reporting et tableaux de bord</li>
+        </ul>
+      </div>
+      <div class="service">
+        <span class="cell-ref">SERV / A4</span>
+        <h3>Aide à la décision &amp; recommandations</h3>
+        <p>Fournir une analyse structurée et des recommandations claires pour aider les décideurs à mieux comprendre leurs options et à prendre des décisions fondées sur des informations pertinentes.</p>
+        <ul>
+          <li>Synthèse des informations clés</li>
+          <li>Analyse des options</li>
+          <li>Identification des risques</li>
+          <li>Recommandations</li>
+          <li>Support à la prise de décision</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:44px;">
+      <a href="#contact" class="btn btn-ghost">Discuter de votre projet <span class="btn-arrow">&gt;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI -->
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Une approche orientée compréhension et décision</h2>
+      <p>Quatre principes qui structurent chaque mission, du premier échange jusqu'à la recommandation finale.</p>
+    </div>
+    <div class="values reveal">
+      <div class="value">
+        <span class="eyebrow">01</span>
+        <h4>Clarté</h4>
+        <p>Transformer des informations complexes en analyses compréhensibles et utiles.</p>
+      </div>
+      <div class="value">
+        <span class="eyebrow">02</span>
+        <h4>Rigueur</h4>
+        <p>Structurer l'analyse et s'appuyer sur des informations pertinentes pour produire des résultats fiables.</p>
+      </div>
+      <div class="value">
+        <span class="eyebrow">03</span>
+        <h4>Orientation business</h4>
+        <p>Relier les données et l'analyse aux véritables enjeux de l'entreprise.</p>
+      </div>
+      <div class="value">
+        <span class="eyebrow">04</span>
+        <h4>Approche personnalisée</h4>
+        <p>Chaque projet est différent. L'analyse est adaptée à vos objectifs, votre contexte et vos besoins.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section id="projets" class="section-line">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Projets sélectionnés</h2>
+      <p>Quelques projets illustrant mon approche de l'analyse, de la Business Intelligence et de l'aide à la décision.</p>
+    </div>
+    <div class="projects reveal">
+      <article class="project">
+        <div>
+          <span class="project-tag">Analyse de marché</span>
+          <h3>Analyse de marché &amp; évaluation d'un projet</h3>
+          <p>Analyse d'un projet d'entreprise visant à mieux comprendre son environnement de marché, les opportunités disponibles et les éléments à prendre en compte avant sa mise en œuvre, dans le secteur de l'élevage industriel.</p>
+        </div>
+        <div class="project-meta">
+          <div class="pm-block">
+            <b>Problématique</b>
+            <span>Le porteur de projet souhaitait évaluer son environnement et mieux comprendre les conditions nécessaires à la mise en œuvre de son projet.</span>
+          </div>
+          <div class="pm-block">
+            <b>Approche</b>
+            <span>Analyse du marché, de la demande et de l'environnement concurrentiel ; identification des opportunités et des risques.</span>
+          </div>
+          <div class="pm-block">
+            <b>Livrables</b>
+            <span>Analyse structurée, synthèse des informations clés, identification des facteurs critiques, recommandations.</span>
+          </div>
+          <div class="pm-block">
+            <b>Impact décisionnel</b>
+            <span>Recommandations ayant conduit au lancement effectif de l'activité.</span>
+          </div>
+        </div>
+      </article>
+      <article class="project">
+        <div>
+          <span class="project-tag">Data, BI &amp; aide à la décision</span>
+          <h3>Système d'aide à la décision pour l'analyse de demandes de prêt</h3>
+          <p>Un projet à la croisée de la Data Analysis, de la Business Intelligence et des Systèmes d'Aide à la Décision.</p>
+        </div>
+        <div class="project-meta">
+          <div class="pm-block">
+            <b>Problématique</b>
+            <span>Comment aider les décideurs à mieux analyser les demandes de prêt et à identifier les profils présentant différents niveaux de risque ?</span>
+          </div>
+          <div class="pm-block">
+            <b>Approche</b>
+            <span>Préparation des données, analyse des variables pertinentes, mise en place d'une logique de scoring, visualisation des indicateurs clés.</span>
+          </div>
+          <div class="pm-block">
+            <b>Solution</b>
+            <span>Un système d'analyse structurant les informations disponibles pour soutenir le processus de décision.</span>
+          </div>
+          <div class="pm-block">
+            <b>Résultats</b>
+            <span>Meilleure visibilité sur les données, identification des facteurs importants, analyse structurée des profils.</span>
+          </div>
+        </div>
+        <figure class="project-visual" style="grid-column:1 / -1;">
+          <svg viewBox="0 0 600 180" role="img" aria-labelledby="scoringTitle scoringDesc">
+            <title id="scoringTitle">Représentation du système de scoring des demandes de prêt</title>
+            <desc id="scoringDesc">Répartition illustrative des dossiers analysés par niveau de risque : faible, modéré et élevé.</desc>
+            <line x1="40" y1="150" x2="580" y2="150" stroke="#cfd0c6" stroke-width="1"/>
+            <line x1="40" y1="20" x2="40" y2="150" stroke="#cfd0c6" stroke-width="1"/>
+            <rect x="90" y="60" width="70" height="90" fill="#2c5652"/>
+            <rect x="220" y="90" width="70" height="60" fill="#5b8480"/>
+            <rect x="350" y="30" width="70" height="120" fill="#2c5652"/>
+            <rect x="480" y="110" width="70" height="40" fill="#9c7a3c"/>
+            <text x="125" y="45" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#454b49">Faible</text>
+            <text x="255" y="80" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#454b49">Modéré</text>
+            <text x="385" y="20" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#454b49">Faible</text>
+            <text x="515" y="100" text-anchor="middle" font-family="IBM Plex Mono" font-size="11" fill="#454b49">Élevé</text>
+          </svg>
+          <figcaption>Représentation illustrative du système de scoring, les données affichées ne sont pas des données clients réelles.</figcaption>
+        </figure>
+      </article>
+    </div>
+    <div style="margin-top:44px;">
+      <a href="#contact" class="btn btn-ghost">Voir le projet <span class="btn-arrow">&gt;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- METHODE -->
+<section id="methode">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Une méthode simple, structurée et orientée vers l'action</h2>
+      <p>Cinq étapes, dans cet ordre, pour transformer une problématique en décision.</p>
+    </div>
+    <div class="method reveal">
+      <div class="method-row">
+        <span class="method-num">01</span>
+        <h4>Comprendre</h4>
+        <p>Nous commençons par comprendre votre activité, votre projet, votre problématique et vos objectifs.</p>
+      </div>
+      <div class="method-row">
+        <span class="method-num">02</span>
+        <h4>Analyser</h4>
+        <p>Nous identifions et analysons les informations et les données pertinentes pour votre situation.</p>
+      </div>
+      <div class="method-row">
+        <span class="method-num">03</span>
+        <h4>Identifier</h4>
+        <p>Nous faisons ressortir les tendances, opportunités, risques et éléments importants.</p>
+      </div>
+      <div class="method-row">
+        <span class="method-num">04</span>
+        <h4>Recommander</h4>
+        <p>Nous transformons les résultats de l'analyse en conclusions et recommandations claires.</p>
+      </div>
+      <div class="method-row" style="border-bottom:none;">
+        <span class="method-num">05</span>
+        <h4>Décider</h4>
+        <p>Vous disposez d'une base d'analyse structurée pour prendre des décisions plus éclairées.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A PROPOS -->
+<section id="apropos">
+  <div class="wrap about reveal">
+    <!-- EMPLACEMENT PHOTO : remplacer le bloc ci-dessous par <img src="photo-herve.jpg" alt="Hervé Nguefa, Business & Data Analyst" style="width:100%;height:100%;object-fit:cover;"> -->
+    <img src="herve.png" alt="Hervé Nguefa, Business & Data Analyst" style="width:100%;height:100%;object-fit:cover;">
+    <div class="about-body">
+      <span class="eyebrow">À propos</span>
+      <h2 style="font-size:clamp(26px,3vw,36px);margin:18px 0 24px;">À propos de moi</h2>
+      <p>Je suis Hervé Nguefa, Business &amp; Data Analyst spécialisé dans l'analyse de projets, l'analyse de marché, la Business Intelligence et l'aide à la décision.</p>
+      <p>Mon parcours en informatique, spécialisé dans les Systèmes d'Aide à la Décision, m'a permis de développer une approche à la croisée de la compréhension des problématiques métiers, de l'analyse des données et de la structuration de l'information.</p>
+      <p>Aujourd'hui, j'accompagne les entrepreneurs, startups et PME qui souhaitent mieux comprendre leur environnement, analyser leurs projets et exploiter leurs informations pour prendre des décisions plus éclairées.</p>
+      <p>Mon approche repose sur une conviction simple : une bonne décision commence par une bonne compréhension de la situation.</p>
+      <div class="about-creds">
+        <div class="cred">Master 1 : Systèmes Embarqués et Intelligence Artificielle, Université de Douala</div>
+        <div class="cred">Licence en Informatique : Systèmes d'Aide à la Décision, Université de Douala</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCES -->
+<section>
+  <div class="wrap reveal">
+    <div class="section-head">
+      <h2>Expertise</h2>
+      <p>Une expertise centrée sur l'analyse et la décision : les outils viennent au service de cette expertise, pas l'inverse.</p>
+    </div>
+    <div class="skills-primary">
+      <span class="skill-chip">Business Analysis</span>
+      <span class="skill-chip">Market Research</span>
+      <span class="skill-chip">Project Analysis</span>
+      <span class="skill-chip">Data Analysis</span>
+      <span class="skill-chip">Business Intelligence</span>
+      <span class="skill-chip">Decision Support</span>
+      <span class="skill-chip">Data Visualization</span>
+      <span class="skill-chip">Business Reporting</span>
+    </div>
+    <div class="skills-secondary">
+      <span>Python</span><span>SQL</span><span>Power BI</span><span>Excel</span><span>Data Analysis Tools</span>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section>
+  <div class="wrap reveal">
+    <div class="section-head">
+      <h2>Certifications &amp; formation continue</h2>
+      <p>Une formation continue alignée sur les standards internationaux de l'analyse de données et de la Business Intelligence.</p>
+    </div>
+    <div class="certs">
+      <div class="cert-row">
+        <span class="cert-name">Power BI Modeling &amp; Advanced Analysis</span>
+        <span class="cert-org">Coursera</span>
+        <!--<span class="cert-year">2026</span>-->
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">SQL Window Functions</span>
+        <span class="cert-org">DataCamp</span>
+        <!--<span class="cert-year">2025</span>!> -->
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Introduction to SQL</span>
+        <span class="cert-org">DataCamp</span>
+        <!--<span class="cert-year">2025</span>-->
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Overview of Data Visualization</span>
+        <span class="cert-org">Coursera</span>
+        <!--<span class="cert-year">2025</span>-->
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Looker Studio - Interactive Dashboards</span>
+        <span class="cert-org">Coursera</span>
+        <!--<span class="cert-year">2025</span>-->
+      </div>
+      <div class="cert-row">
+        <span class="cert-name">Google Agile Project Management</span>
+        <span class="cert-org">Coursera / Google</span>
+        <!--<span class="cert-year">2025</span>-->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="wrap reveal">
+    <span class="eyebrow" style="color:#cdd8d6;">Parlons-en</span>
+    <h2 style="margin-top:18px;">Vous avez un projet, une problématique ou des données à analyser ?</h2>
+    <p>Échangeons sur votre besoin et voyons comment une analyse structurée peut vous aider à mieux comprendre votre situation et à prendre une décision plus éclairée.</p>
+    <div class="cta-actions">
+      <a href="#contact" class="btn btn-on-dark" style="border-color:var(--paper-on-dark);background:var(--paper-on-dark);color:var(--petrol-deep);">Demander un devis <span class="btn-arrow">&gt;</span></a>
+      <a href="#contact" class="btn btn-on-dark">Me contacter</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Parlons de votre projet</h2>
+      <p>Décrivez-moi votre projet, votre problématique ou votre besoin. Je reviendrai vers vous pour mieux comprendre votre situation et discuter de la manière dont je peux vous accompagner.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <div>
+        <span class="eyebrow">Contact direct</span>
+        <div class="contact-direct">
+          <a href="mailto:djifackstephane7@gmail.com">djifackstephane7@gmail.com &gt;</a>
+          <a href="https://wa.me/237698423662" target="_blank" rel="noopener">WhatsApp : +237 698 42 36 62 &gt;</a>
+          <a href="https://github.com/herve237ddf" target="_blank" rel="noopener">github.com/herve237ddf &gt;</a>
+        </div>
+      </div>
+      <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="99eb2af9-4651-48c9-8ce7-27fdddb203c1">
+        <input type="hidden" name="subject" value="Nouvelle demande de devis - site Hervé Nguefa">
+        <input type="hidden" name="from_name" value="Formulaire site Hervé Nguefa">
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+        <div class="form-two">
+          <div class="form-row">
+            <label for="f-nom">Nom</label>
+            <input type="text" id="f-nom" name="nom" required>
+          </div>
+          <div class="form-row">
+            <label for="f-email">Email</label>
+            <input type="email" id="f-email" name="email" required>
+          </div>
+        </div>
+        <div class="form-two">
+          <div class="form-row">
+            <label for="f-entreprise">Entreprise</label>
+            <input type="text" id="f-entreprise" name="entreprise">
+          </div>
+          <div class="form-row">
+            <label for="f-type">Type de projet</label>
+            <select id="f-type" name="type_de_projet">
+              <option>Analyse de marché</option>
+              <option>Business Analysis</option>
+              <option>Data Analysis / BI</option>
+              <option>Aide à la décision</option>
+              <option>Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="f-desc">Description du besoin</label>
+          <textarea id="f-desc" name="description_du_besoin" rows="4" required></textarea>
+        </div>
+        <div class="form-two">
+          <div class="form-row">
+            <label for="f-delai">Délai souhaité</label>
+            <input type="text" id="f-delai" name="delai_souhaite" placeholder="Ex. 4 à 6 semaines">
+          </div>
+          <div class="form-row">
+            <label for="f-budget">Budget indicatif (facultatif)</label>
+            <input type="text" id="f-budget" name="budget_indicatif">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="margin-top:12px;" id="formSubmitBtn">Envoyer ma demande <span class="btn-arrow">&gt;</span></button>
+        <p class="form-note">En envoyant ce formulaire, vous acceptez d'être recontacté(e) au sujet de votre demande.</p>
+        <div class="form-success" id="formSuccess" role="status">Merci ! Votre demande a bien été envoyée. Je reviens vers vous très rapidement.</div>
+        <div class="form-error" id="formError" role="alert">Une erreur est survenue lors de l'envoi. Merci de réessayer, ou de me contacter directement par email ou WhatsApp ci-dessus.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Hervé Nguefa</div>
+        <div class="footer-tag">Business &amp; Data Analyst</div>
+        <div class="footer-tag" style="margin-top:4px;">Business Analysis • Data Analysis • Business Intelligence • Decision Support</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hervé Nguefa. Tous droits réservés.</span>
+      <span><a href="#">Politique de confidentialité</a> &nbsp;|&nbsp; <a href="#">Mentions légales</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Contact form : envoi reel via Web3Forms
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  const errorBox = document.getElementById('formError');
+  const submitBtn = document.getElementById('formSubmitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    success.classList.remove('show');
+    errorBox.classList.remove('show');
+    form.classList.add('form-loading');
+    const originalLabel = submitBtn.innerHTML;
+    submitBtn.innerHTML = 'Envoi en cours...';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+      const result = await response.json();
+
+      if (response.status === 200 && result.success) {
+        success.classList.add('show');
+        form.reset();
+      } else {
+        errorBox.classList.add('show');
+      }
+    } catch (err) {
+      errorBox.classList.add('show');
+    } finally {
+      form.classList.remove('form-loading');
+      submitBtn.innerHTML = originalLabel;
+    }
+  });
+</script>
+
+</body>
+</html>
